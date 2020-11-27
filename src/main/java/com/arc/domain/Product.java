@@ -60,4 +60,45 @@ public class Product {
 	public void setProductCategoryName(String productCategoryName) {
 		this.productCategoryName = productCategoryName;
 	}
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Product [productId=").append(id).append(", name=").append(name).append(", code=").append(code)
+				.append(", title=").append(title).append(", description=").append(description).append(", imgUrl=")
+				.append(imgUrl).append(", price=").append(price).append(", productCategoryName=")
+				.append(productCategoryName).append("]");
+		return builder.toString();
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((code == null) ? 0 : code.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Product other = (Product) obj;
+		if (code == null) {
+			if (other.code != null)
+				return false;
+		} else if (!code.equals(other.code))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
+	}
 }

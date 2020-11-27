@@ -22,6 +22,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import org.springframework.http.HttpStatus;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 
 import java.util.Map;
 import java.util.Optional;
@@ -38,6 +39,9 @@ public class ProductRestController {
 
 	@Autowired
 	private ProductRepository productRepository;
+	
+	@Autowired
+	private DiscoveryClient discoveryClient;
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(ProductRestController.class);
 
