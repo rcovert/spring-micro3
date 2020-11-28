@@ -120,7 +120,7 @@ public class ProductRestController {
         return new ResponseEntity<EntityModel<Product>>(productRes, HttpStatus.OK);
     }
 
-    //------------------- Retreive all Products --------------------------------------------------------
+    //------------------- Retrieve all Products --------------------------------------------------------
     @RequestMapping(value = "/products", method = RequestMethod.GET ,produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<CollectionModel<EntityModel<Product>>> getAllProducts() {
 
